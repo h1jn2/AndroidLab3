@@ -5,6 +5,7 @@ import com.google.firebase.Firebase
 import com.google.firebase.FirebaseApp
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.auth
+import com.google.firebase.firestore.FirebaseFirestore
 
 // multidex 설정
 class MyApplication: MultiDexApplication() {
@@ -15,6 +16,9 @@ class MyApplication: MultiDexApplication() {
     companion object {
         val auth: FirebaseAuth by lazy {
             Firebase.auth
+        }
+        val db: FirebaseFirestore by lazy {
+            FirebaseFirestore.getInstance()
         }
         var email: String? = null
 
