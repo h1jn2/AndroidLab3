@@ -21,8 +21,12 @@ class AFragment: Fragment() {
             val controller = Navigation.findNavController(it)
             // case1 - 이동 대상의 destination id 등록으로
 //            controller.navigate(R.id.BFragment, savedInstanceState)
+
             // case2 - nav graph 의 action id 로 이동
-            controller.navigate(R.id.action_AFragment_to_BFragment)
+            val bundle = Bundle()
+            bundle.putString("aArg", "hello")
+            bundle.putInt("bArg", 20)
+            controller.navigate(R.id.action_AFragment_to_BFragment, bundle)
         }
 
 
